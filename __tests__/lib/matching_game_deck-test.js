@@ -6,7 +6,7 @@ jest.unmock('../../lib/matching_game_deck')
 
 describe('MatchingGameDeck', () => {
   describe('constructor', () => {
-    var countOfInDeck = (rank, deck) => {
+    var countOfRankInDeck = (rank, deck) => {
       var count = 0;
       deck.cards.forEach((card) => {
         if (card.rank === rank) {
@@ -16,21 +16,35 @@ describe('MatchingGameDeck', () => {
       return count
     }
 
+    var countOfSuitInDeck = (suit, deck) => {
+      var count = 0;
+      deck.cards.forEach((card) => {
+        if (card.suit === suit) {
+          count++
+        }
+      })
+      return count
+    }
+
     it('is initialized with the expected 52 cards', () => {
       var deck = new MatchingGameDeck
-      expect(countOfInDeck("2", deck)).toEqual(4)
-      expect(countOfInDeck("3", deck)).toEqual(4)
-      expect(countOfInDeck("4", deck)).toEqual(4)
-      expect(countOfInDeck("5", deck)).toEqual(4)
-      expect(countOfInDeck("6", deck)).toEqual(4)
-      expect(countOfInDeck("7", deck)).toEqual(4)
-      expect(countOfInDeck("8", deck)).toEqual(4)
-      expect(countOfInDeck("9", deck)).toEqual(4)
-      expect(countOfInDeck("10", deck)).toEqual(4)
-      expect(countOfInDeck("J", deck)).toEqual(4)
-      expect(countOfInDeck("Q", deck)).toEqual(4)
-      expect(countOfInDeck("K", deck)).toEqual(4)
-      expect(countOfInDeck("A", deck)).toEqual(4)
+      expect(countOfSuitInDeck('S', deck)).toEqual(13)
+      expect(countOfSuitInDeck('H', deck)).toEqual(13)
+      expect(countOfSuitInDeck('D', deck)).toEqual(13)
+      expect(countOfSuitInDeck('C', deck)).toEqual(13)
+      expect(countOfRankInDeck('2', deck)).toEqual(4)
+      expect(countOfRankInDeck('3', deck)).toEqual(4)
+      expect(countOfRankInDeck('4', deck)).toEqual(4)
+      expect(countOfRankInDeck('5', deck)).toEqual(4)
+      expect(countOfRankInDeck('6', deck)).toEqual(4)
+      expect(countOfRankInDeck('7', deck)).toEqual(4)
+      expect(countOfRankInDeck('8', deck)).toEqual(4)
+      expect(countOfRankInDeck('9', deck)).toEqual(4)
+      expect(countOfRankInDeck('10', deck)).toEqual(4)
+      expect(countOfRankInDeck('J', deck)).toEqual(4)
+      expect(countOfRankInDeck('Q', deck)).toEqual(4)
+      expect(countOfRankInDeck('K', deck)).toEqual(4)
+      expect(countOfRankInDeck('A', deck)).toEqual(4)
     })
   })
 })
