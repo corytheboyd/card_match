@@ -1,12 +1,17 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './index.js',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/public/'
+    path: path.join(__dirname, 'build'),
+    filename: 'bundle.js'
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Card Matching Game'
+    })
+  ],
   module: {
     preLoaders: [
       {
