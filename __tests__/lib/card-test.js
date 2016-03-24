@@ -92,18 +92,23 @@ describe('Card', () => {
   describe('serialize', () => {
     it('correctly serializes cards', () => {
       var twoOfHearts = new Card('2', 'H')
+      var tenOfClubs = Card.deserialize('10:C')
       var kingOfDiamonds = new Card('K', 'D')
-      expect(twoOfHearts.serialize()).toEqual('2H')
-      expect(kingOfDiamonds.serialize()).toEqual('KD')
+      expect(twoOfHearts.serialize()).toEqual('2:H')
+      expect(tenOfClubs.serialize()).toEqual('10:C')
+      expect(kingOfDiamonds.serialize()).toEqual('K:D')
     })
   })
 
   describe('deserialize', () => {
     it('correctly deserializes cards', () => {
-      var threeOfClubs = Card.deserialize('3C')
-      var jackOfDiamonds = Card.deserialize('JD')
+      var threeOfClubs = Card.deserialize('3:C')
+      var tenOfHearts = Card.deserialize('10:H')
+      var jackOfDiamonds = Card.deserialize('J:D')
       expect(threeOfClubs.rank).toEqual('3')
       expect(threeOfClubs.suit).toEqual('C')
+      expect(tenOfHearts.rank).toEqual('10')
+      expect(tenOfHearts.suit).toEqual('H')
       expect(jackOfDiamonds.rank).toEqual('J')
       expect(jackOfDiamonds.suit).toEqual('D')
     })
