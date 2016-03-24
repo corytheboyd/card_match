@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Game extends Component {
+class Game extends React.Component {
   constructor(props) {
     super(props)
   }

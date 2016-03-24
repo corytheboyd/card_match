@@ -8,6 +8,13 @@ module.exports = {
     publicPath: '/public/'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'eslint'
+      }
+    ],
     loaders: [
       {
         test: /\.jsx?$/,

@@ -58,13 +58,9 @@
 
 	var _Game2 = _interopRequireDefault(_Game);
 
-	var _reducers = __webpack_require__(163);
-
-	var _reducers2 = _interopRequireDefault(_reducers);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var rootElement = document.getElementById('root');
+	var rootElement = document.getElementById('root'); /*eslint-env browser */
 
 	function render() {
 	  _reactDom2.default.render(_react2.default.createElement(_Game2.default, null), rootElement);
@@ -19689,10 +19685,6 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _matching_game_deck = __webpack_require__(160);
-
-	var _matching_game_deck2 = _interopRequireDefault(_matching_game_deck);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -19707,14 +19699,7 @@
 	  function Game(props) {
 	    _classCallCheck(this, Game);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Game).call(this, props));
-
-	    _this._deck = new _matching_game_deck2.default();
-
-	    console.log('-------------------------');
-	    console.log('props', props);
-	    console.log('-------------------------');
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Game).call(this, props));
 	  }
 
 	  _createClass(Game, [{
@@ -19723,13 +19708,8 @@
 	      return _react2.default.createElement(
 	        'h1',
 	        null,
-	        'Game!'
+	        'Game'
 	      );
-	    }
-	  }, {
-	    key: 'deck',
-	    get: function get() {
-	      return this._deck;
 	    }
 	  }]);
 
@@ -19737,211 +19717,6 @@
 	}(_react2.default.Component);
 
 	exports.default = Game;
-
-/***/ },
-/* 160 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _deck = __webpack_require__(161);
-
-	var _deck2 = _interopRequireDefault(_deck);
-
-	var _card = __webpack_require__(162);
-
-	var _card2 = _interopRequireDefault(_card);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	var MatchingGameDeck = function (_Deck) {
-	  _inherits(MatchingGameDeck, _Deck);
-
-	  function MatchingGameDeck() {
-	    _classCallCheck(this, MatchingGameDeck);
-
-	    var cards = [new _card2.default('2'), new _card2.default('2'), new _card2.default('2'), new _card2.default('2'), new _card2.default('3'), new _card2.default('3'), new _card2.default('3'), new _card2.default('3'), new _card2.default('4'), new _card2.default('4'), new _card2.default('4'), new _card2.default('4'), new _card2.default('5'), new _card2.default('5'), new _card2.default('5'), new _card2.default('5'), new _card2.default('6'), new _card2.default('6'), new _card2.default('6'), new _card2.default('6'), new _card2.default('7'), new _card2.default('7'), new _card2.default('7'), new _card2.default('7'), new _card2.default('8'), new _card2.default('8'), new _card2.default('8'), new _card2.default('8'), new _card2.default('9'), new _card2.default('9'), new _card2.default('9'), new _card2.default('9'), new _card2.default('10'), new _card2.default('10'), new _card2.default('10'), new _card2.default('10'), new _card2.default('J'), new _card2.default('J'), new _card2.default('J'), new _card2.default('J'), new _card2.default('Q'), new _card2.default('Q'), new _card2.default('Q'), new _card2.default('Q'), new _card2.default('K'), new _card2.default('K'), new _card2.default('K'), new _card2.default('K'), new _card2.default('A'), new _card2.default('A'), new _card2.default('A'), new _card2.default('A')];
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(MatchingGameDeck).call(this, cards));
-	  }
-
-	  return MatchingGameDeck;
-	}(_deck2.default);
-
-	exports.default = MatchingGameDeck;
-
-/***/ },
-/* 161 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Deck = function () {
-	  function Deck(cards) {
-	    _classCallCheck(this, Deck);
-
-	    this._cards = cards;
-	  }
-
-	  _createClass(Deck, [{
-	    key: "shuffle",
-
-
-	    // Implements Fisher–Yates Shuffle
-	    // https://bost.ocks.org/mike/shuffle/
-	    value: function shuffle() {
-	      var m = this.cards.length,
-	          t,
-	          i;
-
-	      // While there remain elements to shuffle…
-	      while (m) {
-
-	        // Pick a remaining element…
-	        i = Math.floor(Math.random() * m--);
-
-	        // And swap it with the current element.
-	        t = this.cards[m];
-	        this.cards[m] = this.cards[i];
-	        this.cards[i] = t;
-	      }
-	    }
-	  }, {
-	    key: "cards",
-	    get: function get() {
-	      return this._cards;
-	    }
-	  }]);
-
-	  return Deck;
-	}();
-
-	exports.default = Deck;
-
-/***/ },
-/* 162 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	var Card = function () {
-	  function Card(rank) {
-	    _classCallCheck(this, Card);
-
-	    this._faceUp = false;
-	    this._rank = rank;
-	    if (this.numericRank() === -1) {
-	      throw Error("Invalid rank '" + rank + "'");
-	    }
-	  }
-
-	  _createClass(Card, [{
-	    key: "setFaceUp",
-	    value: function setFaceUp() {
-	      this._faceUp = true;
-	    }
-	  }, {
-	    key: "setFaceDown",
-	    value: function setFaceDown() {
-	      this._faceUp = false;
-	    }
-	  }, {
-	    key: "rankIsEqual",
-	    value: function rankIsEqual(card) {
-	      return this.numericRank() === card.numericRank();
-	    }
-	  }, {
-	    key: "numericRank",
-	    value: function numericRank() {
-	      switch (this.rank) {
-	        case '2':
-	          return 2;
-	        case '3':
-	          return 3;
-	        case '4':
-	          return 4;
-	        case '5':
-	          return 5;
-	        case '6':
-	          return 6;
-	        case '7':
-	          return 7;
-	        case '8':
-	          return 8;
-	        case '9':
-	          return 9;
-	        case '10':
-	          return 10;
-	        case 'J':
-	          return 11;
-	        case 'Q':
-	          return 12;
-	        case 'K':
-	          return 13;
-	        case 'A':
-	          return 14;
-	        default:
-	          return -1;
-	      }
-	    }
-	  }, {
-	    key: "faceUp",
-	    get: function get() {
-	      return this._faceUp;
-	    }
-	  }, {
-	    key: "rank",
-	    get: function get() {
-	      return this._rank;
-	    }
-	  }]);
-
-	  return Card;
-	}();
-
-	exports.default = Card;
-
-/***/ },
-/* 163 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	exports.default = game;
-	function game() {
-	  var state = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
-	  var action = arguments[1];
-
-	  return state;
-	}
 
 /***/ }
 /******/ ]);
