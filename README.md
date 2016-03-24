@@ -13,14 +13,13 @@ npm start
 
 Run Webpack file watcher to automatically compile assets on file change:
 ```
-npm install -g webpack
-webpack --progress --colors --watch
+webpack-dev-server
 ```
 
-Serve the content on `localhost:3000`:
-```
-npm start
-```
+Visit `http://localhost:8080/webpack-dev-server/public` in your browser and navigate to the `public` directory:
+![image](https://cloud.githubusercontent.com/assets/692632/14006276/05220630-f129-11e5-825f-52b4779463a5.png)
+
+## Testing
 
 Run the test suite:
 ```

@@ -1,6 +1,8 @@
-import expect from 'expect'
 import Card from '../../lib/card'
 import Deck from '../../lib/deck'
+
+jest.unmock('../../lib/card')
+jest.unmock('../../lib/deck')
 
 describe('Deck', () => {
   describe('constructor', () => {
@@ -10,9 +12,9 @@ describe('Deck', () => {
       var ace = new Card('A')
       var deck = new Deck([two, ten, ace])
       expect(deck.cards.length).toEqual(3)
-      expect(deck.cards).toInclude(two)
-      expect(deck.cards).toInclude(ten)
-      expect(deck.cards).toInclude(ace)
+      expect(deck.cards).toContain(two)
+      expect(deck.cards).toContain(ten)
+      expect(deck.cards).toContain(ace)
     })
   })
 
@@ -38,7 +40,7 @@ describe('Deck', () => {
       var serializedCardsBefore = serializeCards(deck.cards)
       deck.shuffle()
       var serializedCardsAfter = serializeCards(deck.cards)
-      expect(serializedCardsBefore).toNotEqual(serializedCardsAfter)
+      expect(serializedCardsBefore).not.toEqual(serializedCardsAfter)
     })
   })
 })

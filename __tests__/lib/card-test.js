@@ -1,11 +1,12 @@
-import expect from 'expect'
 import Card from '../../lib/card'
+
+jest.unmock('../../lib/card')
 
 describe('Card', () => {
   describe('constructor', () => {
     it('defaults faceUp value to false', () => {
-      var card = new Card('3')
-      expect(card.faceUp).toEqual(false)
+      const card = new Card('3')
+      expect(card.faceUp).toBe(false)
     })
 
     it('sets rank from parameters', () => {
@@ -17,11 +18,11 @@ describe('Card', () => {
       expect(jack.rank).toEqual('J')
     })
 
-    context('when the rank is invalid', () => {
+    describe('when the rank is invalid', () => {
       it('throws an error', () => {
         expect(() => {
           var card = new Card('1')
-        }).toThrow(/Invalid rank '1'/)
+        }).toThrow(new Error("Invalid rank '1'"))
       })
     })
   })
