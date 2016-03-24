@@ -21,3 +21,8 @@ Serve the content on `localhost:3000`:
 ```
 npm start
 ```
+
+Run the test suite:
+```
+npm test
+```

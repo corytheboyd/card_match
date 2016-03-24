@@ -56,11 +56,11 @@
 
 	var _redux = __webpack_require__(159);
 
-	var _Game = __webpack_require__(170);
+	var _Game = __webpack_require__(169);
 
 	var _Game2 = _interopRequireDefault(_Game);
 
-	var _reducers = __webpack_require__(171);
+	var _reducers = __webpack_require__(170);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -20397,8 +20397,7 @@
 	}
 
 /***/ },
-/* 169 */,
-/* 170 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20447,7 +20446,7 @@
 	exports.default = Game;
 
 /***/ },
-/* 171 */
+/* 170 */
 /***/ function(module, exports) {
 
 	"use strict";
