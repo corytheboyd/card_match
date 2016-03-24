@@ -1,9 +1,12 @@
 var express = require('express');
+var path = require('path');
+
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'build')));
+app.get('/', function (req, res) {
+  res.sendfile(path.join(__dirname, 'build/index.html'));
+})
 
 var port = process.env.PORT || 3000;
-app.listen(port, function () {
-  console.log('Listening on localhost:' + port);
-});
+app.listen(port);

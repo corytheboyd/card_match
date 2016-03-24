@@ -2,22 +2,33 @@
 
 A simple card matching game. Satisfies requirements outlined here: https://docs.google.com/document/d/18Q4KV5_qr4hNdyp8SFeGTxoGamPIOitVrFZdQA_gfd0/pub
 
-Install dependencies:
-```
-brew update && brew install nvm
-nvm install && npm install
-npm start
-```
+1. Run the server:
+
+  ```
+  brew update && brew install nvm && nvm install
+  npm start
+  ```
+
+1. Visit `localhost:3000` in your browser
 
 ## Development
 
-Run Webpack file watcher to automatically compile assets on file change:
+Run Webpack with the `--watch` command to automatically compile the application when source files are changed:
+```
+webpack --color --progress --watch
+```
+
+Then, serve the build on `localhost:3000`:
+```
+npm start
+```
+
+Alternatively, you can use `webpack-dev-server` to accomplish it all in one fell swoop, with bonus live reloading:
 ```
 webpack-dev-server
 ```
 
-Visit `http://localhost:8080/webpack-dev-server/public` in your browser and navigate to the `public` directory:
-![image](https://cloud.githubusercontent.com/assets/692632/14006276/05220630-f129-11e5-825f-52b4779463a5.png)
+Then visit http://localhost:8080/webpack-dev-server/build.
 
 ## Testing
 
