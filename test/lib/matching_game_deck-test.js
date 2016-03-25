@@ -1,8 +1,5 @@
+import expect from 'expect'
 import MatchingGameDeck from '../../lib/matching_game_deck'
-
-jest.unmock('../../lib/card')
-jest.unmock('../../lib/deck')
-jest.unmock('../../lib/matching_game_deck')
 
 describe('MatchingGameDeck', () => {
   describe('constructor', () => {

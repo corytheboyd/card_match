@@ -1,6 +1,13 @@
-.card-container {
-  display: inline-block;
+.game-container .cards-container {
+  width: 50%
+}
+.game-container .cards-container .card {
+  display: inline;
   border: 1px black solid;
   margin: 5px;
-  padding: 5px
+  padding: 5px;
+  width: 30px;
+  height: 50px;
+  text-align: center;
+  float: left;
 }

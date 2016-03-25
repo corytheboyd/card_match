@@ -5,7 +5,8 @@ A simple card matching game. Satisfies requirements outlined here: https://docs.
 1. Run the server:
 
   ```
-  brew update && brew install nvm && nvm install
+  brew update && brew install nvm
+  nvm install && npm install
   npm start
   ```
 

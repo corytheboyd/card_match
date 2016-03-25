@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { createStore } from 'redux'
 import Game from './components/Game'
+import game from './reducers'
 
 require('./style.css')
 
@@ -10,9 +12,14 @@ document.body.appendChild(rootElement)
 
 function render () {
   ReactDOM.render(
-    <Game />,
+    <div>
+      <Game store={store} />
+    </div>,
     rootElement
   )
 }
+
+const store = createStore(game)
+store.subscribe(render)
 
 render()
