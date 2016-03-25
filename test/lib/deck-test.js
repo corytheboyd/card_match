@@ -1,8 +1,6 @@
+import expect from 'expect'
 import Card from '../../lib/card'
 import Deck from '../../lib/deck'
-
-jest.unmock('../../lib/card')
-jest.unmock('../../lib/deck')
 
 describe('Deck', () => {
   describe('constructor', () => {
@@ -20,7 +18,7 @@ describe('Deck', () => {
 
   describe('shuffle', () => {
     var serializeCards = (cards) => {
-      return cards.map(c => c.serialize()).join('')
+      return cards.map(c => `${c.rank}:${c.suit}`).join('')
     }
 
     it('randomizes order of cards in the deck', () => {
@@ -36,7 +34,7 @@ describe('Deck', () => {
       var serializedCardsBefore = serializeCards(deck.cards)
       deck.shuffle()
       var serializedCardsAfter = serializeCards(deck.cards)
-      expect(serializedCardsBefore).not.toEqual(serializedCardsAfter)
+      expect(serializedCardsBefore).toNotEqual(serializedCardsAfter)
     })
   })
 })
